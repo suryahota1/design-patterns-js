@@ -108,7 +108,7 @@ class Director {
     }
 }
 
-function main () {
+function main1 () {
     const b1 = new CarBuilder();
     const d1 = new Director(b1);
     d1.constructCar("sports");
