@@ -5,7 +5,7 @@ interface Client {
 
 class Target implements Client {
     public request (): any {
-
+        console.log("Target request");
     }
 }
 
@@ -13,7 +13,31 @@ class Target implements Client {
 class Adaptee {
 
     specificRequest() {
-        console.log("")
+        console.log("Adaptee specificRequest");
+    }
+}
+
+class Adapter implements Client {
+
+    private adaptee: Adaptee;
+
+    constructor ( adaptee: Adaptee ) {
+        this.adaptee = adaptee;
     }
 
+    request() {
+        this.adaptee.specificRequest();
+    }
 }
+
+function main9 () {
+    const tgt = new Target();
+    tgt.request();
+
+    const adpt = new Adaptee();
+    const adptr = new Adapter(adpt);
+
+    adptr.request();
+}
+
+main9();
