@@ -48,6 +48,7 @@ function main12 () {
     const wc = new WordsCollection();
     wc.addItem("Surya");
     wc.addItem("Sashi");
+    
 
     const itr = wc.getIterator();
 
