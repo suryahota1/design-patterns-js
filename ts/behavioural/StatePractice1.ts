@@ -18,6 +18,7 @@ class ContextClone {
     public task1 (): void {
         this.currentState.task1();
     }
+    
 
     public task2 (): void {
         this.currentState.task1();
